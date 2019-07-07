@@ -15,7 +15,8 @@
 			Site.mobileNav();
 			Site.testimonialSlider();
 			Site.stickyNav();
-			Site.slickSlider();
+			Site.setActiveImage();
+			Site.updateActiveImage();
 		},
 
 
@@ -36,32 +37,30 @@
 
 		
 
-		slickSlider: function() {
+		setActiveImage: function() {
+			var activeImgSrc = $('.file-list-image.active .attachment-square').attr("src");
+			var firstImage = $('.file-list-image')[0];
 
-			// $('.dog__photos .file-list-wrap').slick({
-			// 	nextArrow: '<div class="next"><i class="fa fa-arrow-right"></i></div>',
-  	// 			prevArrow: '<div class="prev"><i class="fa fa-arrow-left"></i></div>',
-			// });
+			if(!activeImgSrc){
+				activeImgSrc = firstImage;
+			}
 
-			// $('.dogs__photo .file-list-wrap').slick({
-			// 	autoplaySpeed: 1500
-			// });
+			var newImageStyle = "background: url(" + activeImgSrc + ") no-repeat center center; background-size: cover;"
 
-			// $('.dogs__photo .file-list-wrap').slick({
-			// 	autoplaySpeed: 1500
-			// });
+			$('.active-image').attr("style", newImageStyle);
+		},
 
-			// $('.dogs__photo .slick-next').hide();
-			// $('.dogs__photo .slick-prev').hide();
+		updateActiveImage: function() {
+			
+			$(".file-list-image").on('click', function() {
 
-			// $('.dogs__photo .file-list-wrap').mouseover(function() {
-			// 	$(this).slick('slickNext');
-			// 	$(this).slick('slickPlay');
-			// });
-			// $('.dogs__photo .file-list-wrap').mouseout(function() {
-			// 	$(this).slick('slickPause');
-			// });
+				var currentlyActive = $(".file-list-image.active");
 
+				currentlyActive.removeClass('active');
+				$(this).addClass('active');
+
+				Site.setActiveImage();
+			});
 		},
 
 

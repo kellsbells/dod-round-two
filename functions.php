@@ -133,10 +133,19 @@ function cmb2_output_file_list( $file_list_meta_key, $img_size = 'square' ) {
 
 	echo '<div class="file-list-wrap">';
 	// Loop through them and output an image
+
+	$index = 0;
+
 	foreach ( (array) $files as $attachment_id => $attachment_url ) {
-		echo '<div class="file-list-image">';
+		if($index == 0) {
+			echo '<div class="file-list-image active">';
+		} else {
+			echo '<div class="file-list-image">';
+		}
+
 		echo wp_get_attachment_image( $attachment_id, $img_size );
 		echo '</div>';
+		$index++;
 	}
 
 	echo '</div>';

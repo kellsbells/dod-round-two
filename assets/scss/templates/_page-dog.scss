@@ -4,35 +4,34 @@
 
 .dog {
 	> .container {
-		padding: 80px 40px;
+		padding: 80px 40px 0 40px;
 		flex-wrap: wrap;
 
 		@include breakpoint(900px) {
-			padding: 160px 0 80px;
 			flex-wrap: nowrap;
 		}
 	}
 
-	.next {
-		display: block;
-	    position: absolute;
-	    z-index: 1;
-	    top: 50%;
-	    right: -20px;
-	    margin-top: -10px;
-	    cursor: pointer;
-	    color: $color-charlie;
+	.active-image {
+		width: 300px;
+		height: 300px;
+		box-shadow: $box-shadow;
+		margin-bottom: 15px;
 	}
 
-	.prev {
-		display: block;
-	    position: absolute;
-	    z-index: 1;
-	    top: 50%;
-	    margin-top: -10px;
-	    margin-left: -20px;
-	    cursor: pointer;
-	    color: $color-charlie;
+	.file-list-image {
+		width: 50px;
+		height: 50px;
+		border: 2px solid $white;
+	}
+
+	.file-list-wrap {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.file-list-image.active {
+		border: 2px solid $color-alpha;
 	}
 
 	.container {
@@ -46,12 +45,6 @@
 	&__photos {
 		max-width: 300px;
 		width: 100%;
-		margin: 0 30px;
-	}
-
-	.slick-prev,
-	.slick-next {
-		background-color: hotpink;
 	}
 
 	&__wrapper {
@@ -67,11 +60,15 @@
 
 	&__content {
 		font-family: $font-beta;
+
+		.about {
+			font-family: $font-alpha;
+		}
 	}
 
 	&__contact {
 		padding: 40px 0;
-		background-color: $color-beta;
+		
 
 		@include breakpoint(900px) {
 			padding: 100px 0;
@@ -79,6 +76,13 @@
 
 		.container {
 			display: block;
+		}
+
+		.wrapper {
+			background-color: $color-beta;
+			padding: 20px;
+			border-radius: 4px;
+			box-shadow: $box-shadow;
 		}
 	}
 
