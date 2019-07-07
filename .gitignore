@@ -1,0 +1,9 @@
+# ignore all files starting with . or ~
+.*
+!.gitignore
+
+# ignore node dependency directories (used by grunt)
+node_modules/
+
+
+.DS_Store

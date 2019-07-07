@@ -1,0 +1,91 @@
+//--------------------------------------------------------------
+// Styles for [Single Dog Page]
+//--------------------------------------------------------------
+
+.dog {
+	> .container {
+		padding: 80px 40px;
+		flex-wrap: wrap;
+
+		@include breakpoint(900px) {
+			padding: 160px 0 80px;
+			flex-wrap: nowrap;
+		}
+	}
+
+	.next {
+		display: block;
+	    position: absolute;
+	    z-index: 1;
+	    top: 50%;
+	    right: -20px;
+	    margin-top: -10px;
+	    cursor: pointer;
+	    color: $color-charlie;
+	}
+
+	.prev {
+		display: block;
+	    position: absolute;
+	    z-index: 1;
+	    top: 50%;
+	    margin-top: -10px;
+	    margin-left: -20px;
+	    cursor: pointer;
+	    color: $color-charlie;
+	}
+
+	.container {
+		display: flex;
+	}
+
+	&__title {
+		padding-top: 20px;
+	}
+
+	&__photos {
+		max-width: 300px;
+		width: 100%;
+		margin: 0 30px;
+	}
+
+	.slick-prev,
+	.slick-next {
+		background-color: hotpink;
+	}
+
+	&__wrapper {
+		@include breakpoint(900px) {
+			padding-left: 40px;
+		}	
+	}
+
+	&__text {
+		font-style: italic;
+		padding-bottom: 15px;
+	}
+
+	&__content {
+		font-family: $font-beta;
+	}
+
+	&__contact {
+		padding: 40px 0;
+		background-color: $color-beta;
+
+		@include breakpoint(900px) {
+			padding: 100px 0;
+		}
+
+		.container {
+			display: block;
+		}
+	}
+
+	&__title {
+		h1 {
+			margin: 0;
+			padding-bottom: 10px;
+		}
+	}
+}
